@@ -230,4 +230,18 @@ public class MainController implements Initializable {
         javafx.application.Platform.runLater(() -> lb122.setText(message + "\n"));
     }
 
+    @FXML
+    private void openRealTimeMessaging(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("real_time_messaging.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Real-Time Messaging");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            System.err.println("Error loading real-time messaging UI: " + e.getMessage());
+        }
+    }
+
 }
